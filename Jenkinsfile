@@ -13,13 +13,6 @@ pipeline{
                 '''
             }
         }
-        stage("Deploy"){
-            steps{
-                sh '''
-                kubectl  set image deployment vote vote=503561443217.dkr.ecr.us-east-1.amazonaws.com/meenu-repo:vote
-                kubectl rollout restart deployment vote
-                '''
-            }
         }
     }
 }
